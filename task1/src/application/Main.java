@@ -2,8 +2,6 @@ package application;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
-//import javafx.scene.Scene;
-//import javafx.scene.layout.BorderPane;
 import java.util.Scanner;
 
 
@@ -12,7 +10,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		Scanner scan = new Scanner(System.in);
-		/*Task16 task16 = new Task16(scan);
+		Task16 task16 = new Task16(scan);
 		task16.separation();
 		task16.mul();
 		
@@ -40,14 +38,14 @@ public class Main extends Application {
 		task37.sixthTask();
 		task37.seventhTask();
 		task37.eighthTask();
-		task37.ninthTask();*/
+		task37.ninthTask();
 		
 		Task38 task38 = new Task38(scan);
 		task38.firstGraph();
 		task38.secondGraph();
 		task38.thiordGraph();
 		
-		/*Task16_1 task16_1 = new Task16_1();
+		Task16_1 task16_1 = new Task16_1();
 		task16_1.calculate();
 		
 		Task18_1 task18_1 = new Task18_1(scan);
@@ -69,7 +67,7 @@ public class Main extends Application {
 		task36_1.check();
 		
 		Task39_1 task39_1 = new Task39_1();
-		task39_1.find();*/
+		task39_1.find();
 		
 		Task40_1 task40_1 = new Task40_1(scan);
 		task40_1.find();
