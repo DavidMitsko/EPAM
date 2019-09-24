@@ -1,11 +1,7 @@
 package sample;
 
-import com.mitjko.array.Task14;
-import com.mitjko.array.Task20;
-import com.mitjko.matrix.Task11;
-import com.mitjko.matrix.Task13;
-import com.mitjko.matrix.Task34;
-import com.mitjko.matrix.Task36;
+import com.mitjko.array.*;
+import com.mitjko.matrix.*;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -16,15 +12,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        /*Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();*/
-
         Scanner scan = new Scanner(System.in);
         Random rand = new Random();
 
-        /*Task12 task12 = new Task12(scan, rand);
+        Task12 task12 = new Task12(scan, rand);
         task12.calculateAmount();
 
         Task14 task14 = new Task14(scan, rand);
@@ -43,7 +34,7 @@ public class Main extends Application {
         task13.show();
 
         Task34 task34 = new Task34(scan, rand);
-        task34.show();*/
+        task34.show();
 
         Task36 task36 = new Task36(scan, rand);
         task36.smoothing();
