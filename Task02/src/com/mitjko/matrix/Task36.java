@@ -1,3 +1,8 @@
+/*
+Операция сглаживания матрицы дает новую матрицу того же размера, каждый элемент которой
+получается как среднее арифметическое соседей соответствующего элемента исходной матрицы.
+Построить результат сглаживания заданной матрицы
+ */
 package com.mitjko.matrix;
 
 import java.util.Arrays;
@@ -19,11 +24,7 @@ public class Task36 {
         for(int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
-            {
                 matrix[i][j] = rand.nextInt(25);
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
         }
     }
 
@@ -53,7 +54,7 @@ public class Task36 {
                     newMatrix[i][j] = (matrix[i - 1][j] + matrix[i - 1][j + 1] + matrix[i][j + 1]) / 3;
                     continue;
                 }
-                if((j - 1) < 0)// || (j - 1) < 0)// || (i + 1) >= m || (j + 1) >= n)
+                if((j - 1) < 0)
                 {
                     newMatrix[i][j] = (matrix[i + 1][j + 1] + matrix[i][j + 1] + matrix[i + 1][j] +
                             matrix[i - 1][j] + matrix[i - 1][j + 1]) / 5;
@@ -83,9 +84,15 @@ public class Task36 {
         }
     }
 
-    public void show()
+    public void showNewMatrix()
     {
         for(int i = 0; i < m; i++)
             System.out.println(Arrays.toString(newMatrix[i]));
+    }
+
+    public void showMatrix()
+    {
+        for(int i = 0; i < m; i++)
+            System.out.println(Arrays.toString(matrix[i]));
     }
 }

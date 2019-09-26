@@ -33,12 +33,33 @@ public class Main extends Application {
         task13.create();
         task13.show();
 
+        Task19 task19 = new Task19(scan, rand);
+        task19.initialization();
+        task19.show();
+
+        Task22 task22 = new Task22(scan, rand);
+        task22.initialization();
+        task22.show();
+
         Task34 task34 = new Task34(scan, rand);
         task34.show();
 
         Task36 task36 = new Task36(scan, rand);
+        task36.showMatrix();
+        System.out.println();
         task36.smoothing();
-        task36.show();
+        task36.showNewMatrix();
+
+        Task38 task38 = new Task38(scan, rand);
+        task38.showFirstMatrix();
+        System.out.println();
+        task38.showSecondMatrix();
+        System.out.println();
+        task38.calculate();
+        task38.showThirdMatrix();
+
+        Task40 task40 = new Task40();
+        task40.permute(0);
 
         System.exit(0);
     }

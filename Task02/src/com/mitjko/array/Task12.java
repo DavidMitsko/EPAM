@@ -16,10 +16,7 @@ public class Task12 {
         n = scan.nextInt();
         array = new double[n];
         for(int i = 0; i < n; i++)
-        {
             array[i] = rand.nextDouble();
-            //System.out.println(array[i]);
-        }
     }
 
     public boolean define(int number)
@@ -32,9 +29,9 @@ public class Task12 {
             }
         }
         if (isComposite) {
-            return false;//System.out.println("число составное ");
+            return false;
         } else {
-            return true;//System.out.println("число  простое ");
+            return true;
         }
     }
 
