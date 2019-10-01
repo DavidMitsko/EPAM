@@ -5,6 +5,7 @@ import com.mitjko.matrix.*;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,6 +21,11 @@ public class Main extends Application {
 
         Task14 task14 = new Task14(scan, rand);
         task14.find();
+
+        Task18 task18 = new Task18(rand);
+        System.out.println(Arrays.toString(task18.getArray()));
+        if(task18.hack())
+            System.out.println(Arrays.toString(task18.getArray()));
 
         Task20 task20 = new Task20(scan, rand);
         task20.delete();
