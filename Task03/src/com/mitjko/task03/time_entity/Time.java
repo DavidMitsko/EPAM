@@ -1,4 +1,6 @@
-package com.mitjko.task03.time;
+package com.mitjko.task03.time_entity;
+
+import java.util.Objects;
 
 public class Time {
     private int hour;
@@ -48,5 +50,27 @@ public class Time {
             this.second = 0;
         else
             this.second = second;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if(o == null){
+            return false;
+        }
+        if(this.getClass() != o.getClass()){
+            return false;
+        }
+        Time time = (Time) o;
+        return hour == time.hour &&
+                minute == time.minute &&
+                second == time.second;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hour, minute, second);
     }
 }

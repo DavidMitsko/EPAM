@@ -1,4 +1,7 @@
-package com.mitjko.task03.student;
+package com.mitjko.task03.student_entity;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Student {
     private String name;
@@ -64,5 +67,31 @@ public class Student {
 
     public void setPatronymic(String fatherName) {
         this.patronymic = fatherName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+        if(o == null){
+            return false;
+        }
+        if(this.getClass() != o.getClass()){
+            return false;
+        }
+        Student student = (Student) o;
+        return groupNumber == student.groupNumber &&
+                name.equals(student.name) &&
+                forename.equals(student.forename) &&
+                patronymic.equals(student.patronymic) &&
+                Arrays.equals(progress, student.progress);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(name, forename, patronymic, groupNumber);
+        result = 31 * result + Arrays.hashCode(progress);
+        return result;
     }
 }

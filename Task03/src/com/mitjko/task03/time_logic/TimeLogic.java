@@ -1,6 +1,6 @@
 package com.mitjko.task03.time_logic;
 
-import com.mitjko.task03.time.Time;
+import com.mitjko.task03.time_entity.Time;
 
 public class TimeLogic {
     public void changeHour(Time time, int hour){

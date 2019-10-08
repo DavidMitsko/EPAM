@@ -1,6 +1,6 @@
 package com.mitjko.task03.student_logic;
 
-import com.mitjko.task03.student.Student;
+import com.mitjko.task03.student_entity.Student;
 
 public class StudentLogic {
     public boolean find(Student student){

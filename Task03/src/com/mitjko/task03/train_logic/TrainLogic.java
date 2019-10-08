@@ -1,6 +1,6 @@
 package com.mitjko.task03.train_logic;
 
-import com.mitjko.task03.train.Train;
+import com.mitjko.task03.train_entity.Train;
 
 public class TrainLogic {
     public boolean retTrain(Train train, int number) {

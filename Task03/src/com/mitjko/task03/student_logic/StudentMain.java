@@ -1,7 +1,6 @@
 package com.mitjko.task03.student_logic;
 
-import com.mitjko.task03.student.Student;
-import com.mitjko.task03.student_logic.StudentLogic;
+import com.mitjko.task03.student_entity.Student;
 
 import java.util.Scanner;
 

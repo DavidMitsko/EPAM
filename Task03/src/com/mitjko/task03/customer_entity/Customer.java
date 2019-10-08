@@ -1,4 +1,6 @@
-package com.mitjko.task03.customer;
+package com.mitjko.task03.customer_entity;
+
+import java.util.Objects;
 
 public class Customer {
     private int id;
@@ -22,8 +24,34 @@ public class Customer {
 
     public String toString(){
         String resultString = id + " " + name + " " + forename + " " + patronymic + " "
-                + creditCardNumber + " " + bankAccountNumber;
+                + creditCardNumber + " " + bankAccountNumber + " " + address;
         return resultString;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if(o == null){
+            return false;
+        }
+        if(this.getClass() != o.getClass()){
+            return false;
+        }
+        Customer customer = (Customer) o;
+        return id == customer.id &&
+                creditCardNumber == customer.creditCardNumber &&
+                bankAccountNumber == customer.bankAccountNumber &&
+                name.equals(customer.name) &&
+                forename.equals(customer.forename) &&
+                patronymic.equals(customer.patronymic) &&
+                address.equals(customer.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, forename, patronymic, address, creditCardNumber, bankAccountNumber);
     }
 
     public int getId() {

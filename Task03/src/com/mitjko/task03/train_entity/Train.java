@@ -1,4 +1,6 @@
-package com.mitjko.task03.train;
+package com.mitjko.task03.train_entity;
+
+import java.util.Objects;
 
 public class Train {
     private String destination;
@@ -37,5 +39,27 @@ public class Train {
 
     public void setDepartureTime(double departureTime) {
         this.departureTime = departureTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if(o == null){
+            return false;
+        }
+        if(this.getClass() != o.getClass()){
+            return false;
+        }
+        Train train = (Train) o;
+        return number == train.number &&
+                Double.compare(train.departureTime, departureTime) == 0 &&
+                destination.equals(train.destination);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(destination, number, departureTime);
     }
 }

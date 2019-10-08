@@ -1,4 +1,6 @@
-package com.mitjko.task03.counter;
+package com.mitjko.task03.counter_entity;
+
+import java.util.Objects;
 
 public class Counter {
     private int value;
@@ -39,7 +41,7 @@ public class Counter {
         this.downOverflow = downOverflow;
     }
 
-    public boolean increment(){
+    public void increment(){
         if(value != 10){
             value++;
             if(upOverflow == true)
@@ -49,10 +51,9 @@ public class Counter {
             value = 0;
             upOverflow = true;
         }
-        return  upOverflow;
     }
 
-    public boolean decrement(){
+    public void decrement(){
         if(value != 0){
             value--;
             if(downOverflow == true)
@@ -62,6 +63,27 @@ public class Counter {
             value = 10;
             downOverflow = true;
         }
-        return downOverflow;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if(o == null){
+            return false;
+        }
+        if(this.getClass() != o.getClass()){
+            return false;
+        }
+        Counter counter = (Counter) o;
+        return value == counter.value &&
+                upOverflow == counter.upOverflow &&
+                downOverflow == counter.downOverflow;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, upOverflow, downOverflow);
     }
 }

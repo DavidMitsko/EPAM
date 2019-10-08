@@ -1,6 +1,6 @@
 package com.mitjko.task03.counter_logic;
 
-import com.mitjko.task03.counter.Counter;
+import com.mitjko.task03.counter_entity.Counter;
 
 public class CounterMain {
     public static void main(String[] args){
