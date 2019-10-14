@@ -12,16 +12,22 @@ public class ClientLogic {
         return temp;
     }
 
-    public Account find(Client client, Account account){
-        int i = client.getAccounts().indexOf(account);
-        return client.getAccount(i);
+    public Account find(Client client, int number){
+        int index = 0;//client.getAccounts().indexOf(number);
+        for(int i = 0; i < client.getAccounts().size(); i++){
+            if(number == client.getAccount(i).getNumber()){
+                index = i;
+                break;
+            }
+        }
+        return client.getAccount(index);
     }
 
     public int calculateSum(Client client){
         int sum = 0;
         for(int i = 0; i < client.getAccounts().size(); i++){
             if(client.getAccount(i).isBlocked() == false) {
-                sum += client.getAccount(i).getMoney();
+                sum += client.getAccount(i).getBalance();
             }
         }
         return sum;
@@ -30,7 +36,7 @@ public class ClientLogic {
     public int calculatePositiveBalance(Client client){
         int sum = 0, temp = 0;
         for(int i = 0; i < client.getAccounts().size(); i++){
-            temp = client.getAccount(i).getMoney();
+            temp = client.getAccount(i).getBalance();
             if(client.getAccount(i).isBlocked() == false && temp > 0) {
                 sum += temp;
             }
@@ -41,7 +47,7 @@ public class ClientLogic {
     public int calculateNegativeBalance(Client client){
         int sum = 0, temp = 0;
         for(int i = 0; i < client.getAccounts().size(); i++){
-            temp = client.getAccount(i).getMoney();
+            temp = client.getAccount(i).getBalance();
             if(client.getAccount(i).isBlocked() == false && temp < 0) {
                 sum += temp;
             }

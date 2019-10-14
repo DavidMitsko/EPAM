@@ -5,21 +5,18 @@ import java.util.Objects;
 public class Account implements Comparable<Account>{
     private int number;
     private boolean isBlocked;
-    private int money;
+    private int balance;
 
-    public Account(int number, boolean isBlocked, int money) {
+    public Account(int number, boolean isBlocked, int balance) {
         this.number = number;
         this.isBlocked = isBlocked;
-        this.money = money;
+        this.balance = balance;
     }
 
     public int compareTo(Account account){
-        if(this.isBlocked == false && account.isBlocked == true){
+        if(this.balance > account.balance){
             return 1;
-        }
-        if(this.money > account.money){
-            return 1;
-        }else if(this.money < account.money){
+        }else if(this.balance < account.balance){
             return -1;
         }else{
             return 0;
@@ -42,12 +39,12 @@ public class Account implements Comparable<Account>{
         isBlocked = blocked;
     }
 
-    public int getMoney() {
-        return money;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     @Override
@@ -62,12 +59,12 @@ public class Account implements Comparable<Account>{
         Account account = (Account) o;
         return number == account.number &&
                 isBlocked == account.isBlocked &&
-                money == account.money;
+                balance == account.balance;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, isBlocked, money);
+        return Objects.hash(number, isBlocked, balance);
     }
 
     @Override
@@ -75,7 +72,7 @@ public class Account implements Comparable<Account>{
         return "Account{" +
                 "number=" + number +
                 ", isBlocked=" + isBlocked +
-                ", money=" + money +
+                ", balance=" + balance +
                 '}';
     }
 }
