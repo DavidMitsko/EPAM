@@ -17,6 +17,14 @@ public class Area {
         this.populationOfArea = populationOfArea;
     }
 
+    public Area(String name, double squareOfArea, int populationOfArea){
+        this.name = name;
+        cities = new ArrayList<City>();
+        this.squareOfArea = squareOfArea;
+        this.populationOfArea = populationOfArea;
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -52,8 +60,8 @@ public class Area {
         return cities.get(i);
     }
 
-    public void setCity(int i, City city){
-        this.cities.add(i, city);
+    public void setCity(City city){
+        this.cities.add(city);
     }
 
     public ArrayList<City> getCities() {

@@ -18,6 +18,12 @@ public class State {
         this.population = population;
     }
 
+    public State(String name) {
+        this.name = name;
+        this.regions = new ArrayList<Region>();
+        this.capital = new City();
+    }
+
     public State(String name, ArrayList<Region> regions, City capital) {
         this.name = name;
         this.regions = regions;
@@ -36,8 +42,8 @@ public class State {
         return regions.get(i);
     }
 
-    public void setRegion(int i, Region region){
-        regions.add(i, region);
+    public void setRegion(Region region){
+        regions.add(region);
     }
 
     public ArrayList<Region> getRegions() {

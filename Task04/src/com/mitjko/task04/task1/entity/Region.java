@@ -18,6 +18,12 @@ public class Region {
         this.name = name;
     }
 
+    public Region(String name){
+        this.name = name;
+        areas = new ArrayList<Area>();
+        regionalCentre = new City();
+    }
+
     public Region(ArrayList<Area> areas, City regionalCentre, String name) {
         this.areas = areas;
         this.regionalCentre = regionalCentre;
@@ -61,8 +67,8 @@ public class Region {
         return areas.get(i);
     }
 
-    public void setArea(int i, Area area){
-        areas.add(i, area);
+    public void setArea(Area area){
+        areas.add(area);
     }
 
     public ArrayList<Area> getAreas() {

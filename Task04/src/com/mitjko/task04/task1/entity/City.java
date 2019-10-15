@@ -13,6 +13,9 @@ public class City {
         this.population = population;
     }
 
+    public City() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
