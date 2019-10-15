@@ -27,7 +27,17 @@ public class Main {
         Text txt = new Text(sentences, "My text");
         TextLogic textLogic = new TextLogic();
         System.out.println(txt.getHeading());
-        System.out.println(textLogic.consoleOut(txt));
+        System.out.println(consoleOut(txt));
 
+    }
+
+    public static String consoleOut(Text txt){
+        String str = new String();
+        for(int i = 0; i < txt.getText().size(); i++){
+            for(int j = 0; j < txt.getText().get(i).getSentence().size(); j++){
+                str += txt.getText().get(i).getSentence().get(j).getWord();
+            }
+        }
+        return str;
     }
 }
