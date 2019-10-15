@@ -3,19 +3,21 @@ package com.mitjko.task04.task1.logic;
 import com.mitjko.task04.task1.entity.State;
 
 public class StateLogic {
-    public void calcSquare(State state) {
+    public double calcSquare(State state, RegionLogic regionLogic) {
         double square = 0;
         for (int i = 0; i < state.getRegions().size(); i++) {
-            square += state.getRegion(i).getSquare();
+            square += regionLogic.calcSquare(state.getRegion(i));//state.getRegion(i).getSquare();
         }
-        state.setSquare(square);
+        //state.setSquare(square);
+        return square;
     }
 
-    public void calcPopulation(State state) {
+    public int calcPopulation(State state, RegionLogic regionLogic) {
         int population = 0;
         for (int i = 0; i < state.getRegions().size(); i++) {
-            population += state.getRegion(i).getPopulation();
+            population += regionLogic.calcPopulation(state.getRegion(i));//state.getRegion(i).getPopulation();
         }
-        state.setPopulation(population);
+        //state.setPopulation(population);
+        return population;
     }
 }
