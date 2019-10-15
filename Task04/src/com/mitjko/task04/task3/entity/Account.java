@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class Account implements Comparable<Account>{
     private int number;
-    private boolean isBlocked;
+    private boolean block;
     private int balance;
 
-    public Account(int number, boolean isBlocked, int balance) {
+    public Account(int number, boolean block, int balance) {
         this.number = number;
-        this.isBlocked = isBlocked;
+        this.block = block;
         this.balance = balance;
     }
 
@@ -32,11 +32,11 @@ public class Account implements Comparable<Account>{
     }
 
     public boolean isBlocked() {
-        return isBlocked;
+        return block;
     }
 
-    public void setBlocked(boolean blocked) {
-        isBlocked = blocked;
+    public void setBlock(boolean block) {
+        block = block;
     }
 
     public int getBalance() {
@@ -58,20 +58,20 @@ public class Account implements Comparable<Account>{
         }
         Account account = (Account) o;
         return number == account.number &&
-                isBlocked == account.isBlocked &&
+                block == account.block &&
                 balance == account.balance;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, isBlocked, balance);
+        return Objects.hash(number, block, balance);
     }
 
     @Override
     public String toString() {
         return "Account{" +
                 "number=" + number +
-                ", isBlocked=" + isBlocked +
+                ", isBlocked=" + block +
                 ", balance=" + balance +
                 '}';
     }

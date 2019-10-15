@@ -13,7 +13,7 @@ public class ClientLogic {
     }
 
     public Account find(Client client, int number){
-        int index = 0;//client.getAccounts().indexOf(number);
+        int index = 0;
         for(int i = 0; i < client.getAccounts().size(); i++){
             if(number == client.getAccount(i).getNumber()){
                 index = i;
